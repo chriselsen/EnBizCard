@@ -264,17 +264,17 @@ export default {
   props: ['featured', 'mimetypes', 'index', 'resizeImage', 'showAlert'],
   data() {
     return {
-      dragOver: false,
+      dragOver: false
     }
   },
   components: {
     ProductCard,
-    draggable,
+    draggable
   },
   computed: {
     hasContent() {
       return this.featured[this.index].content.length
-    },
+    }
   },
   methods: {
     mediaType(t) {
@@ -307,13 +307,13 @@ export default {
         price: null,
         label: null,
         link: null,
-        contentType: 'product',
+        contentType: 'product'
       })
     },
     addText() {
       this.featured[this.index].content.push({
         contentType: 'text',
-        value: null,
+        value: null
       })
       let texts = this.featured[this.index].content.filter(
         (e) => e.contentType == 'text'
@@ -377,7 +377,7 @@ export default {
           type,
           contentType: 'media',
           ext,
-          mime,
+          mime
         })
         this.resizeImage(
           type,
@@ -423,7 +423,7 @@ export default {
                   type,
                   contentType: 'media',
                   file,
-                  ext: 'mp3',
+                  ext: 'mp3'
                 })
                 let loadTags = setInterval(() => {
                   if (
@@ -446,7 +446,7 @@ export default {
                   contentType: 'media',
                   file,
                   ext: 'mp3',
-                  info: 'No Thumb',
+                  info: 'No Thumb'
                 })
                 reject()
               }
@@ -459,7 +459,7 @@ export default {
                 contentType: 'media',
                 file,
                 ext: 'mp3',
-                info: 'No ID3 Tag',
+                info: 'No ID3 Tag'
               })
               reject()
             }
@@ -504,7 +504,7 @@ export default {
           title,
           type,
           contentType: 'media',
-          ext: 'mp4',
+          ext: 'mp4'
         })
       }
       if (uA && uA.length == 2) {
@@ -575,12 +575,12 @@ export default {
             canvas.height = height
             var renderContext = {
               canvasContext: ctx,
-              viewport: viewport,
+              viewport: viewport
             }
             page.render(renderContext).promise.then((e) => {
               let coverDataURI = canvas.toDataURL('image/jpeg', 0.8)
               let cover = new Blob([this.dataURIToBinary(coverDataURI)], {
-                type: 'image/jpeg',
+                type: 'image/jpeg'
               })
               this.featured[this.index].content.push({
                 name: file.name,
@@ -592,14 +592,14 @@ export default {
                 title,
                 type,
                 contentType: 'media',
-                ext: 'pdf',
+                ext: 'pdf'
               })
             })
           })
         })
       }
       reader.readAsDataURL(file)
-    },
-  },
+    }
+  }
 }
 </script>

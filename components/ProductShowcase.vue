@@ -24,7 +24,7 @@
         class="label"
         :style="{
           backgroundColor: `${colors.buttonBg.color}`,
-          lineHeight: PreviewMode ? 'inherit' : '1.5rem',
+          lineHeight: PreviewMode ? 'inherit' : '1.5rem'
         }"
         target="_blank"
         :href="product.link"
@@ -40,7 +40,7 @@ export default {
   methods: {
     getTitle(e) {
       return e.toLowerCase().split(' ').join('_')
-    },
-  },
+    }
+  }
 }
 </script>

@@ -17,6 +17,6 @@ export default {
         }
         return svg
       } else return svg
-    },
-  },
+    }
+  }
 }

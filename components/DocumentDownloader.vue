@@ -20,7 +20,7 @@
           class="dlBtn"
           @click.prevent="downloadDocument()"
           :style="{
-            backgroundColor: `${colors.buttonBg.color}`,
+            backgroundColor: `${colors.buttonBg.color}`
           }"
           :href="
             PreviewMode ? '' : `./media/${getTitle(media.title)}.${media.ext}`
@@ -51,7 +51,7 @@ export default {
         window.URL.createObjectURL(this.media.file),
         `${this.media.title}.pdf`
       )
-    },
-  },
+    }
+  }
 }
 </script>

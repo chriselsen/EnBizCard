@@ -45,7 +45,7 @@
         <a
           class="playPause"
           :style="{
-            backgroundColor: `${colors.buttonBg.color}`,
+            backgroundColor: `${colors.buttonBg.color}`
           }"
           @click="togglePlay($refs.mediaSource)"
         >
@@ -108,10 +108,10 @@ export default {
         this.$refs.play.style.display = 'block'
         this.$refs.pause.style.display = 'none'
       }
-    },
+    }
   },
   mounted() {
     this.$refs.pCtrl.style.display = 'flex'
-  },
+  }
 }
 </script>

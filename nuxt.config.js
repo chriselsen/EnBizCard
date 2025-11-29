@@ -24,7 +24,7 @@ export default {
     theme_color: '#111827',
     author: 'Vishnu Raghav',
     lang: 'en',
-    name: 'EnBizCard - An Open-Source Digital Business Card Generator',
+    name: 'EnBizCard - An Open-Source Digital Business Card Generator'
   },
   head: {
     title: 'EnBizCard - An Open-Source Digital Business Card Generator',
@@ -35,49 +35,49 @@ export default {
         hid: 'description',
         name: 'description',
         content:
-          'EnBizCard helps you create beautiful, responsive HTML-based digital business cards that can be hosted on your website.',
+          'EnBizCard helps you create beautiful, responsive HTML-based digital business cards that can be hosted on your website.'
       },
       {
         hid: 'msapplication-TileColor',
         name: 'msapplication-TileColor',
         property: 'msapplication-TileColor',
-        content: '#111827',
+        content: '#111827'
       },
       {
         hid: 'msapplication-TileImage',
         name: 'msapplication-TileImage',
         property: 'msapplication-TileImage',
-        content: '/mstile-150x150.png',
-      },
+        content: '/mstile-150x150.png'
+      }
     ],
     link: [
       {
         rel: 'icon',
         type: 'image/x-icon',
-        href: '/favicon.ico?v=2',
+        href: '/favicon.ico?v=2'
       },
       {
         rel: 'icon',
         type: 'image/png',
-        href: '/favicon-16x16.png',
+        href: '/favicon-16x16.png'
       },
       {
         rel: 'icon',
         type: 'image/png',
-        href: '/favicon-32x32.png',
+        href: '/favicon-32x32.png'
       },
       {
         rel: 'apple-touch-icon',
         sizes: '180x180',
-        href: '/apple-touch-icon.png',
+        href: '/apple-touch-icon.png'
       },
       {
         rel: 'mask-icon',
         color: '#111827',
-        href: '/safari-pinned-tab.svg',
-      },
+        href: '/safari-pinned-tab.svg'
+      }
     ],
-    script: [{ src: '/qrcode.min.js' }],
+    script: [{ src: '/qrcode.min.js' }]
   },
   manifest: {
     name: 'EnBizCard - An Open-Source Digital Business Card Generator',
@@ -91,81 +91,81 @@ export default {
       {
         src: '/icon_64.png',
         sizes: '64x64',
-        type: 'image/png',
+        type: 'image/png'
       },
       {
         src: '/maskable_64.png',
         sizes: '64x64',
         type: 'image/png',
-        purpose: 'maskable',
+        purpose: 'maskable'
       },
       {
         src: '/icon_120.png',
         sizes: '120x120',
-        type: 'image/png',
+        type: 'image/png'
       },
       {
         src: '/maskable_120.png',
         sizes: '120x120',
         type: 'image/png',
-        purpose: 'maskable',
+        purpose: 'maskable'
       },
       {
         src: '/icon_144.png',
         sizes: '144x144',
-        type: 'image/png',
+        type: 'image/png'
       },
       {
         src: '/maskable_144.png',
         sizes: '144x144',
         type: 'image/png',
-        purpose: 'maskable',
+        purpose: 'maskable'
       },
       {
         src: '/icon_152.png',
         sizes: '152x152',
-        type: 'image/png',
+        type: 'image/png'
       },
       {
         src: '/maskable_152.png',
         sizes: '152x152',
         type: 'image/png',
-        purpose: 'maskable',
+        purpose: 'maskable'
       },
       {
         src: '/icon_192.png',
         sizes: '192x192',
-        type: 'image/png',
+        type: 'image/png'
       },
       {
         src: '/maskable_192.png',
         sizes: '192x192',
         type: 'image/png',
-        purpose: 'maskable',
+        purpose: 'maskable'
       },
       {
         src: '/icon_384.png',
         sizes: '384x384',
-        type: 'image/png',
+        type: 'image/png'
       },
       {
         src: '/maskable_384.png',
         sizes: '384x384',
         type: 'image/png',
-        purpose: 'maskable',
+        purpose: 'maskable'
       },
       {
         src: '/icon_512.png',
         sizes: '512x512',
-        type: 'image/png',
+        type: 'image/png'
       },
       {
         src: '/maskable_512.png',
         sizes: '512x512',
         type: 'image/png',
-        purpose: 'maskable',
-      },
-    ],
+        purpose: 'maskable'
+      }
+    ]
   },
   loading: false,
   /*
@@ -188,7 +188,7 @@ export default {
   buildModules: [
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
     '@nuxtjs/tailwindcss',
-    '@aceforth/nuxt-optimized-images',
+    '@aceforth/nuxt-optimized-images'
   ],
   optimizedImages: {
     inlineImageLimit: 1000,
@@ -203,7 +203,7 @@ export default {
     handleImages: ['jpeg', 'png', 'svg', 'webp', 'gif'],
     optimizeImages: false,
     optimizeImagesInDev: false,
-    defaultImageLoader: 'img-loader',
+    defaultImageLoader: 'img-loader'
   },
   /*
    ** Nuxt.js modules
@@ -221,11 +221,11 @@ export default {
           {
             loader: 'raw-loader',
             options: {
-              esModule: false,
-            },
-          },
+              esModule: false
+            }
+          }
         ],
-        exclude: /(node_modules)/,
+        exclude: /(node_modules)/
       })
     },
     html: {
@@ -243,13 +243,13 @@ export default {
         removeRedundantAttributes: true,
         sortClassName: true,
         trimCustomFragments: true,
-        useShortDoctype: true,
-      },
-    },
+        useShortDoctype: true
+      }
+    }
   },
   generate: {
     dir: 'public',
-    fallback: true,
+    fallback: true
   },
-  telemetry: false,
+  telemetry: false
 }
