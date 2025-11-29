@@ -47,6 +47,9 @@ typings/
 # Optional eslint cache
 .eslintcache
 
+# Generated files
+package-lock.json
+
 # Optional REPL history
 .node_repl_history
 
@@ -67,6 +70,7 @@ typings/
 
 # nuxt.js build output
 .nuxt
+.output
 
 # Nuxt generate
 dist

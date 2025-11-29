@@ -1,0 +1,17 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+.nuxt/
+dist/
+.output/
+
+# Static files
+static/
+
+# Third-party libraries
+assets/scripts/pdfjs-dist/
+
+# Generated files
+*.min.js
+*.min.css

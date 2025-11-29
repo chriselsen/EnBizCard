@@ -120,7 +120,7 @@ export default {
   props: ['i', 'index', 'item', 'featured', 'showAlert', 'resizeImage'],
   data() {
     return {
-      dragOver: false,
+      dragOver: false
     }
   },
   methods: {
@@ -168,7 +168,7 @@ export default {
           type: 'image',
           ext,
           mime,
-          title,
+          title
         }
         this.resizeImage(
           'product',
@@ -178,10 +178,10 @@ export default {
         )
       }
       reader.readAsDataURL(file)
-    },
+    }
   },
   mounted() {
     !this.$refs.input.value && this.$refs.input.focus()
-  },
+  }
 }
 </script>

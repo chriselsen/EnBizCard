@@ -26,6 +26,6 @@
 
 <script>
 export default {
-  props: ['downloadCheckList', 'item', 'index'],
+  props: ['downloadCheckList', 'item', 'index']
 }
 </script>

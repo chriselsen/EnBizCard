@@ -30,7 +30,7 @@ window.addEventListener('load', () => {
       container: 'svg-viewbox',
       join: !0,
       ecl: 'L',
-      padding: 0,
+      padding: 0
     }).svg())
 })
 navigator.canShare
@@ -38,7 +38,7 @@ navigator.canShare
       navigator.share({
         title: document.title,
         text: 'You can view my Digital Business Card here:',
-        url: window.location.href,
+        url: window.location.href
       })
     })
   : s.addEventListener('click', () => {

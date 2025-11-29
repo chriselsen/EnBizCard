@@ -37,7 +37,7 @@ export default {
       cropper: {},
       dataURL: null,
       blobData: null,
-      image: {},
+      image: {}
     }
   },
   methods: {
@@ -50,7 +50,7 @@ export default {
       canvas.toBlob(
         (blob) => {
           vm.content[vm.type].blob = new File([blob], 'photo', {
-            type: this.mime,
+            type: this.mime
           })
           vm.resizeImage(vm.type, vm.mime)
           vm.$emit('closeCropper')
@@ -58,7 +58,7 @@ export default {
         this.mime,
         0.8
       )
-    },
+    }
   },
   mounted() {
     this.image = this.$refs.image
@@ -70,8 +70,8 @@ export default {
       responsive: true,
       viewMode: 2,
       highlight: false,
-      rotatable: true,
+      rotatable: true
     })
-  },
+  }
 }
 </script>

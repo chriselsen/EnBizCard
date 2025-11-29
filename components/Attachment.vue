@@ -79,7 +79,7 @@ export default {
     'label',
     'description',
     'resizeImage',
-    'showAlert',
+    'showAlert'
   ],
   data() {
     return {
@@ -87,13 +87,13 @@ export default {
       showCropper: false,
       tempURL: null,
       mime: null,
-      filetype: null,
+      filetype: null
     }
   },
   computed: {
     imageAttached() {
       return this.content[this.type].url ? true : false
-    },
+    }
   },
   methods: {
     closeCropper() {
@@ -147,7 +147,7 @@ export default {
             blob: file,
             ext,
             mime,
-            resized: file,
+            resized: file
           }
           if (!mime.match(/svg|gif|webp/)) this.resizeImage(type, mime)
         } else {
@@ -159,7 +159,7 @@ export default {
         }
       }
       reader.readAsDataURL(file)
-    },
-  },
+    }
+  }
 }
 </script>

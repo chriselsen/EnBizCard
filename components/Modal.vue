@@ -22,7 +22,7 @@ export default {
   methods: {
     navTo() {
       router.push('hosting-guide')
-    },
-  },
+    }
+  }
 }
 </script>

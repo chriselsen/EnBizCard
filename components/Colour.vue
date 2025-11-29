@@ -34,10 +34,10 @@ import colorpicker from '@caohenghu/vue-colorpicker'
 import { directive as onClickaway } from 'vue-clickaway2'
 export default {
   components: {
-    colorpicker,
+    colorpicker
   },
   directives: {
-    onClickaway: onClickaway,
+    onClickaway: onClickaway
   },
   props: ['name', 'label', 'colors'],
   methods: {
@@ -46,8 +46,8 @@ export default {
     },
     closeColourPalette(name) {
       this.colors[name].openPalette = false
-    },
-  },
+    }
+  }
 }
 </script>
 <style lang="scss">

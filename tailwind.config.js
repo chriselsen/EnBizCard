@@ -6,17 +6,17 @@ module.exports = {
     './layouts/**/*.vue',
     './pages/**/*.vue',
     './plugins/**/*.{js,ts}',
-    './nuxt.config.{js,ts}',
+    './nuxt.config.{js,ts}'
   ],
   theme: {
     extend: {
       screens: {
-        xs: '360px',
+        xs: '360px'
       },
       backgroundColor: ['group-focus', 'checked'],
       borderColor: ['checked'],
-      brightness: ['hover', 'focus'],
-    },
+      brightness: ['hover', 'focus']
+    }
   },
-  plugins: [],
+  plugins: []
 }

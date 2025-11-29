@@ -55,7 +55,7 @@ import Check from '@/components/Check'
 export default {
   props: ['downloadCheckList', 'downloadChecked', 'downloadPackage'],
   components: {
-    Check,
-  },
+    Check
+  }
 }
 </script>

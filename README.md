@@ -79,6 +79,23 @@ cp env.example .env
 3. Run `docker-compose up -d`
 4. Access the app at http://localhost:22212 (or a different port, in case you edited the .env file).
 
+## Code Quality
+
+This project uses ESLint and Prettier to maintain consistent code style and catch potential errors.
+
+### Available Scripts
+
+- `npm run lint` - Check for linting errors
+- `npm run lint:fix` - Automatically fix linting errors
+- `npm run format` - Format code with Prettier
+
+### Development Workflow
+
+1. Install dependencies: `npm install`
+2. Run linting: `npm run lint`
+3. Format code: `npm run format`
+4. Fix linting issues: `npm run lint:fix`
+
 ## License
 
 ```

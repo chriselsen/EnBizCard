@@ -243,7 +243,7 @@ import Help from '@/components/Help'
 export default {
   components: {
     Footer,
-    Help,
-  },
+    Help
+  }
 }
 </script>

@@ -72,7 +72,7 @@
                 rel="noreferrer"
                 @click.prevent.capture="downloadKey()"
                 :style="{
-                  backgroundColor: `${colors.buttonBg.color}`,
+                  backgroundColor: `${colors.buttonBg.color}`
                 }"
                 tabindex="-1"
               >
@@ -90,7 +90,7 @@
               <button
                 id="copyURL"
                 :style="{
-                  backgroundColor: `${colors.buttonBg.color}`,
+                  backgroundColor: `${colors.buttonBg.color}`
                 }"
               >
                 <div
@@ -155,7 +155,7 @@
                     ? images.cover.url
                       ? '3rem 0 6rem'
                       : '3rem 0 8rem'
-                    : '3rem 0',
+                    : '3rem 0'
                 }"
                 alt="Logo"
               />
@@ -164,7 +164,7 @@
           <main
             :style="{
               backgroundColor: `${colors.mainBg.color}`,
-              marginTop: `${hasOnlyProfilePic ? '5rem' : '0'}`,
+              marginTop: `${hasOnlyProfilePic ? '5rem' : '0'}`
             }"
           >
             <img
@@ -223,7 +223,7 @@
                     target="_blank"
                     rel="noopener noreferrer"
                     :style="{
-                      backgroundColor: `${colors.buttonBg.color}`,
+                      backgroundColor: `${colors.buttonBg.color}`
                     }"
                     :aria-label="item.name"
                   >
@@ -378,23 +378,23 @@ export default {
     'footerCredit',
     'showAlert',
     'hasLightBG',
-    'pubKeyIsValid',
+    'pubKeyIsValid'
   ],
   mixins: [utils],
   components: {
     MediaPlayer,
     DocumentDownloader,
-    ProductShowcase,
+    ProductShowcase
   },
   watch: {
     getFeaturedMusic(oldv, newv) {
       this.paused = this.getFeaturedMusic.map((e) => true)
-    },
+    }
   },
   data() {
     return {
       paused: [],
-      hasInstagramEmbed: false,
+      hasInstagramEmbed: false
     }
   },
   computed: {
@@ -429,7 +429,7 @@ export default {
       if (regex.test(css)) {
         return css.match(/^font-family[^;]*/)[0]
       }
-    },
+    }
   },
   methods: {
     getHref(e) {
@@ -503,13 +503,13 @@ export default {
           }
         }
       })
-    },
+    }
   },
   mounted() {
     setTimeout(() => {
       this.hasInstagramEmbed = true
     }, 5000)
-  },
+  }
 }
 </script>
 

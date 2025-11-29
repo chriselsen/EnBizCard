@@ -15,6 +15,7 @@ EMAIL;TYPE=WORK:{{ vCard.email }}
 URL;TYPE=Digital Business Card:{{ vCard.hostedURL }}
 URL:{{ vCard.website }}
 {{ getURLs }}
+{{ getPhotoField }}
 KEY;TYPE=PGP;ENCODING=b:{{ vCard.key }}
 NOTE:{{ vCard.note }}
 UID:{{ vCard.uid }}
@@ -41,6 +42,11 @@ export default {
       let ln = this.vCard.ln
       return (fn + ln).length ? `${fn ? fn : ''}${ln ? ' ' + ln : ''}` : null
     },
-  },
+    getPhotoField() {
+      return this.vCard.photo && this.vCard.photoType
+        ? `PHOTO;ENCODING=b;TYPE=${this.vCard.photoType}:${this.vCard.photo}`
+        : ''
+    }
+  }
 }
 </script>
