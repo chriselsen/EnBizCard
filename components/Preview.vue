@@ -217,7 +217,10 @@
                 v-for="(item, index) in primaryActions"
                 :key="'pa' + index"
               >
-                <div class="actionBtn">
+                <div class="actionBtn" :style="{
+                  backgroundColor: `${colors.actionBg.color}`,
+                  borderColor: `${colors.actionBg.color}`
+                }">
                   <a
                     :href="getHref(item)"
                     target="_blank"
@@ -234,11 +237,16 @@
                       "
                     ></div>
                   </a>
-                  <p class="textColor">
-                    {{
-                      item.name.substr(0, 1).toUpperCase() + item.name.slice(1)
-                    }}
-                  </p>
+                  <div class="action-content">
+                    <h3 class="textColor action-title">
+                      {{
+                        item.name.substr(0, 1).toUpperCase() + item.name.slice(1)
+                      }}
+                    </h3>
+                    <p class="textColor action-value" v-if="item.value">
+                      {{ item.value }}
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -248,7 +256,10 @@
                 v-for="(item, index) in secondaryActions"
                 :key="'sa' + index"
               >
-                <div class="actionBtn secBtn">
+                <div class="actionBtn" :style="{
+                  backgroundColor: `${colors.actionBg.color}`,
+                  borderColor: `${colors.actionBg.color}`
+                }">
                   <a
                     :href="getHref(item)"
                     target="_blank"
@@ -258,6 +269,16 @@
                   >
                     <div class="icon" v-html="getSVG(item)"></div>
                   </a>
+                  <div class="action-content">
+                    <h3 class="textColor action-title">
+                      {{
+                        item.name.substr(0, 1).toUpperCase() + item.name.slice(1)
+                      }}
+                    </h3>
+                    <p class="textColor action-value" v-if="item.value">
+                      {{ item.value }}
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -336,20 +357,6 @@
               </div>
             </div>
           </main>
-          <footer
-            v-if="footerCredit"
-            :style="{ backgroundColor: `${colors.mainBg.color}` }"
-            class="textColor"
-          >
-            Created with
-            <a
-              class="textColor"
-              href="https://enbizcard.vishnuraghav.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              >EnBizCard</a
-            >
-          </footer>
         </body>
       </html>
     </div>
@@ -729,30 +736,40 @@ export default {
     width: 100%;
     margin-top: 2rem;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
+    gap: 0.5rem;
   }
   .actionsC {
-    width: 33.33%;
+    width: 100%;
   }
   .actionBtn {
-    padding: 0.5rem;
+    padding: 0.75rem 1rem;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    border: 1px solid transparent;
+    border-radius: 0.75rem;
     a {
       border-radius: 100%;
       padding: 1rem;
       line-height: 0;
+      margin-right: 1rem;
+      flex-shrink: 0;
     }
-    p {
-      margin: 0.5rem 0 0;
-      font-size: 0.9rem;
+    .action-content {
+      flex: 1;
+      .action-title {
+        margin: 0;
+        font-size: 0.9rem;
+        font-weight: bold;
+      }
+      .action-value {
+        margin: 0.25rem 0 0;
+        font-size: 0.8rem;
+        opacity: 0.8;
+      }
     }
-  }
-  .secBtn {
-    padding: 1rem;
   }
 
   // Featured Content
@@ -1092,30 +1109,40 @@ export default {
     width: 100%;
     margin-top: 2rem;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
+    gap: 0.5rem;
   }
   .actionsC {
-    width: 33.33%;
+    width: 100%;
   }
   .actionBtn {
-    padding: 0.5rem;
+    padding: 0.75rem 1rem;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    border: 1px solid transparent;
+    border-radius: 0.75rem;
     a {
       border-radius: 0.5rem;
       padding: 1rem;
       line-height: 0;
+      margin-right: 1rem;
+      flex-shrink: 0;
     }
-    p {
-      margin: 0.5rem 0 0;
-      font-size: 0.9rem;
+    .action-content {
+      flex: 1;
+      .action-title {
+        margin: 0;
+        font-size: 0.9rem;
+        font-weight: bold;
+      }
+      .action-value {
+        margin: 0.25rem 0 0;
+        font-size: 0.8rem;
+        opacity: 0.8;
+      }
     }
-  }
-  .secBtn {
-    padding: 1rem;
   }
 
   // Featured Content
@@ -1453,28 +1480,40 @@ export default {
   .actions {
     width: 100%;
     margin-top: 2rem;
-    display: grid;
-    grid-gap: 1rem;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
   }
   .actionBtn {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
+    padding: 0.75rem 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.75rem;
     a {
       border-radius: 0.5rem;
       padding: 1rem;
       line-height: 0;
+      margin-right: 1rem;
+      flex-shrink: 0;
     }
-    p {
-      margin: 0 0 0 0.75rem;
-      font-size: 0.9rem;
-      white-space: nowrap;
+    .action-content {
+      flex: 1;
+      .action-title {
+        margin: 0;
+        font-size: 0.9rem;
+        font-weight: bold;
+        white-space: nowrap;
+      }
+      .action-value {
+        margin: 0.25rem 0 0;
+        font-size: 0.8rem;
+        opacity: 0.8;
+        white-space: nowrap;
+      }
     }
-  }
-  .secondary {
-    grid-template-columns: repeat(auto-fill, minmax(3.5rem, 1fr));
   }
 
   // Featured Content

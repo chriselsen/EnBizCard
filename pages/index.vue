@@ -57,13 +57,6 @@
           v-html="require(`~/assets/icons/logo.svg?include`)"
           title="EnBizCard - An Open-Source Digital Business Card Generator"
         ></div>
-        <a
-          class="font-extrabold tracking-wide leading-none shrink-0 p-3 border-2 text-white border-gray-700 rounded hover:bg-gray-700 focus:bg-gray-700 transition-colors duration-200"
-          href="https://www.vishnuraghav.com/donate"
-          target="_blank"
-          rel="noreferrer"
-          >Donate</a
-        >
       </div>
       <h1
         class="text-3xl md:text-5xl font-extrabold mt-24 md:mt-48 md:leading-tight"
@@ -87,12 +80,6 @@
         >
           Create your own
         </button>
-        <a
-          class="font-extrabold leading-none text-lg tracking-wide shrink-0 p-5 mt-2 text-white bg-gray-700 rounded hover:bg-gray-600 focus:bg-gray-600 transition-colors duration-200"
-          href="/demo"
-          target="_blank"
-          >View demo</a
-        >
       </div>
       <p class="mt-6">
         Read the
@@ -280,13 +267,15 @@
               "
             />
             <p class="p-3" v-if="filteredPrimaryActions.length < 1">
-              Can't find an action? Please
+              Can't find an action? Please check the
               <a
-                href="#help"
+                href="https://github.com/vishnuraghavb/EnBizCard"
                 class="cursor-pointer underline font-extrabold text-emerald-600 hover:text-emerald-500 focus:text-emerald-500 transition-colors duration-200"
-                >leave your suggestion</a
+                target="_blank"
+                rel="noopener noreferrer"
+                >GitHub repository</a
               >
-              on Telegram
+              for more information
             </p>
             <div class="stepC actions">
               <button
@@ -348,13 +337,15 @@
               "
             />
             <p class="p-3" v-if="filteredSecondaryActions.length < 1">
-              Can't find an action? Please
+              Can't find an action? Please check the
               <a
-                href="#help"
+                href="https://github.com/vishnuraghavb/EnBizCard"
                 class="cursor-pointer underline font-extrabold text-emerald-600 hover:text-emerald-500 focus:text-emerald-500 transition-colors duration-200"
-                >leave your suggestion</a
+                target="_blank"
+                rel="noopener noreferrer"
+                >GitHub repository</a
               >
-              on Telegram
+              for more information
             </p>
             <div class="stepC actions">
               <button
@@ -512,6 +503,11 @@
             <Colour
               name="cardBg"
               label="Featured content background"
+              :colors="colors"
+            />
+            <Colour
+              name="actionBg"
+              label="Action box background"
               :colors="colors"
             />
           </div>
@@ -744,6 +740,10 @@ export default {
         },
         cardBg: {
           color: `#fff`,
+          openPalette: false
+        },
+        actionBg: {
+          color: `#D3D3D3`,
           openPalette: false
         }
       },
@@ -1658,8 +1658,10 @@ export default {
       if (this.downloadChecked) {
         this.PreviewMode = false
         setTimeout(() => {
+          // Get the HTML content from the Preview component's ref
+          let htmlRef = this.$refs.html.$refs.html
           let el = new DOMParser().parseFromString(
-            this.$refs.html.$refs.html.outerHTML,
+            htmlRef.outerHTML,
             'text/html'
           )
 

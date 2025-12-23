@@ -9,12 +9,6 @@
             title="EnBizCard - An Open-Source Digital Business Card Generator"
           ></div
         ></NuxtLink>
-        <a
-          class="font-extrabold tracking-wide leading-none shrink-0 p-3 border-2 text-white border-gray-700 rounded hover:bg-gray-700 focus:bg-gray-700 transition-colors duration-200"
-          href="https://www.vishnuraghav.com/donate"
-          target="_blank"
-          >Donate</a
-        >
       </div>
       <div id="guide" class="max-w-screen-sm">
         <h1
@@ -154,15 +148,8 @@
           </ul>
           <p class="mt-4">
             If you got any doubt setting up your digital business card on any of
-            these platforms, You can always
-            <a
-              class="underline text-emerald-600 font-extrabold hover:text-emerald-500 focus:text-emerald-500 transition-colors duration-200"
-              href="https://t.me/enbizcard"
-              target="_blank"
-              rel="noopener noreferrer"
-              >join the telegram group</a
-            >
-            and ask it.
+            these platforms, please refer to the documentation of the respective
+            platform.
           </p>
         </div>
         <div class="mt-16">
