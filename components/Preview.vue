@@ -19,8 +19,7 @@
             name="author"
             content="EnBizCard - An Open-Source Digital Business Card Generator"
           />
-          <meta name="url" content="https://enbizcard.vishnuraghav.com/" />
-          <meta name="designer" content="Vishnu Raghav" />
+
           <meta
             property="og:title"
             :content="`${getFullname}'s Digital Business Card`"
