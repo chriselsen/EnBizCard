@@ -216,18 +216,22 @@
                 v-for="(item, index) in primaryActions"
                 :key="'pa' + index"
               >
-                <div class="actionBtn" :style="{
-                  backgroundColor: `${colors.actionBg.color}`,
-                  borderColor: `${colors.actionBg.color}`
-                }">
-                  <a
-                    :href="getHref(item)"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                <a
+                  class="actionBtn"
+                  :href="getHref(item)"
+                  :target="item.name === 'Threema' ? '_self' : '_blank'"
+                  rel="noopener noreferrer"
+                  :style="{
+                    backgroundColor: `${colors.actionBg.color}`,
+                    borderColor: `${colors.actionBg.color}`
+                  }"
+                  :aria-label="item.name"
+                >
+                  <div
                     :style="{
                       backgroundColor: `${colors.buttonBg.color}`
                     }"
-                    :aria-label="item.name"
+                    class="action-icon"
                   >
                     <div
                       class="icon iconColor"
@@ -235,7 +239,7 @@
                         require(`~/assets/icons/${item.icon}.svg?include`)
                       "
                     ></div>
-                  </a>
+                  </div>
                   <div class="action-content">
                     <h3 class="textColor action-title">
                       {{
@@ -246,7 +250,7 @@
                       {{ item.value }}
                     </p>
                   </div>
-                </div>
+                </a>
               </div>
             </div>
             <div class="actions secondary">
@@ -255,19 +259,23 @@
                 v-for="(item, index) in secondaryActions"
                 :key="'sa' + index"
               >
-                <div class="actionBtn" :style="{
-                  backgroundColor: `${colors.actionBg.color}`,
-                  borderColor: `${colors.actionBg.color}`
-                }">
-                  <a
-                    :href="getHref(item)"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                <a
+                  class="actionBtn"
+                  :href="getHref(item)"
+                  :target="item.name === 'Threema' ? '_self' : '_blank'"
+                  rel="noopener noreferrer"
+                  :style="{
+                    backgroundColor: `${colors.actionBg.color}`,
+                    borderColor: `${colors.actionBg.color}`
+                  }"
+                  :aria-label="item.name"
+                >
+                  <div
                     :style="{ background: item.color }"
-                    :aria-label="item.name"
+                    class="action-icon"
                   >
                     <div class="icon" v-html="getSVG(item)"></div>
-                  </a>
+                  </div>
                   <div class="action-content">
                     <h3 class="textColor action-title">
                       {{
@@ -278,7 +286,7 @@
                       {{ item.value }}
                     </p>
                   </div>
-                </div>
+                </a>
               </div>
             </div>
             <div
@@ -749,7 +757,9 @@ export default {
     justify-content: flex-start;
     border: 1px solid transparent;
     border-radius: 0.75rem;
-    a {
+    text-decoration: none;
+    cursor: pointer;
+    .action-icon {
       border-radius: 100%;
       padding: 1rem;
       line-height: 0;
@@ -1122,7 +1132,9 @@ export default {
     justify-content: flex-start;
     border: 1px solid transparent;
     border-radius: 0.75rem;
-    a {
+    text-decoration: none;
+    cursor: pointer;
+    .action-icon {
       border-radius: 0.5rem;
       padding: 1rem;
       line-height: 0;
@@ -1491,7 +1503,9 @@ export default {
     padding: 0.75rem 1rem;
     border: 1px solid transparent;
     border-radius: 0.75rem;
-    a {
+    text-decoration: none;
+    cursor: pointer;
+    .action-icon {
       border-radius: 0.5rem;
       padding: 1rem;
       line-height: 0;
