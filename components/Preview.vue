@@ -19,6 +19,7 @@
             name="author"
             content="EnBizCard - An Open-Source Digital Business Card Generator"
           />
+          <link v-if="images.photo.url" rel="icon" type="image/x-icon" :href="PreviewMode ? images.photo.url : `./photo.${images.photo.ext}`" />
 
           <meta
             property="og:title"
@@ -219,7 +220,7 @@
                 <a
                   class="actionBtn"
                   :href="getHref(item)"
-                  :target="item.name === 'Threema' ? '_self' : '_blank'"
+                  target="_blank"
                   rel="noopener noreferrer"
                   :style="{
                     backgroundColor: `${colors.actionBg.color}`,
@@ -262,7 +263,7 @@
                 <a
                   class="actionBtn"
                   :href="getHref(item)"
-                  :target="item.name === 'Threema' ? '_self' : '_blank'"
+                  target="_blank"
                   rel="noopener noreferrer"
                   :style="{
                     backgroundColor: `${colors.actionBg.color}`,
